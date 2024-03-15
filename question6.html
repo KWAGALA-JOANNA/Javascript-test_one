@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form</title>
+  <script>
+    function validateForm() {
+      let email = document.forms["form"]["email"].value;
+      let name = document.forms["form"]["name"].value;
+      let password = document.forms["form"]["password"].value;
+      if (email == "" || name == "" || password =="") {
+        // These "||" mean the keyword "or" 
+        // alert will display if one of the fields is not filled
+        alert("Please fill all the values");
+        return false;
+      }
+    }
+    </script>
+    
+</head>
+<body>
+  
+
+<form forms="form" onsubmit="return validateForm()" >
+  <label for="email">Enter Email</label><br>
+  <input type="email" name="email"><br>
+  <label for="name">Enter your Name</label><br>
+  <input type="text" name="name"><br>
+  <label for="password">Enter Password</label><br>
+  <input type="password" name="password"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+  
