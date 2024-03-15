@@ -1,14 +1,14 @@
-function fibonacci_num(num) {
-    let FirstNumber = 0;
-    let SecondNumber = 1;
-    let sum;
-    let x = 0;
-    for (x = 0; x < num; x++) {
-        sum = FirstNumber + SecondNumber;
-        FirstNumber = SecondNumber;
-        SecondNumber = sum;
+// Function to generate Fibonacci sequence up to n
+function fibonacci(n) {
+    let fibSeries = [0, 1];  // Initialize the sequence with the first two Fibonacci numbers
+    while (fibSeries[fibSeries.length - 1] + fibSeries[fibSeries.length - 2] <= n) {  // Continue until the last number in the sequence is less than or equal to n
+        fibSeries.push(fibSeries[fibSeries.length - 1] + fibSeries[fibSeries.length - 2]);  // Add the next Fibonacci number to the sequence
     }
-    return SecondNumber;
+    return fibSeries;
 }
- 
-console.log("Fibonacci_num(100): " + fibonacci_num(100));
+
+// Print Fibonacci numbers up to 100
+console.log("Fibonacci numbers up to 100:");
+fibonacci(100).forEach(num => {
+    console.log(num);
+});
